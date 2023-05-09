@@ -1,0 +1,212 @@
+* {
+  overscroll-behavior: none;
+  box-sizing: border-box;
+
+  /* COLORS  */
+  --col-coal8: 28, 29, 31;
+  --ool-coal7: 27, 29, 31;
+  --col-cloud: 211, 219, 211;
+  --col-black: 0, 0, 0;
+
+  /* FONTS */
+  --font-text: "Cutive Mono", monospace;
+  --font-head: "Cormorant Garamond", serif;
+  font-size: 12pt;
+  font-family: var(---text);
+
+  transition: color 222ms ease-in;
+
+  /* DECORATION  */
+  --line: 0.01rem solid rgba(var(--col-cloud), 0.55);
+
+  /* SIZES */
+  --content-w: 20cm;
+}
+
+html {
+  background-color: rgba(var(--col-coal8), 1);
+  color: rgba(var(--col-cloud), 1);
+  display: grid;
+  place-items: center;
+}
+
+body {
+  font-family: var(--font-text);
+}
+
+.App {
+  display: grid;
+  gap: 1rem;
+  place-content: stretch;
+  place-items: center;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+main {
+  padding: 0;
+  display: grid;
+  align-items: stretch;
+  align-content: stretch;
+  justify-content: center;
+  background-color: rgba(var(--col-coal7), 1);
+  box-shadow: 0 0 1.9rem 0.1rem rgba(var(--col-black), 0.55);
+  width: 100%;
+  height: 100%;
+  min-height: 100vh;
+}
+
+a {
+  color: rgba(var(--col-cloud), 0.77);
+  text-decoration: none;
+  font-family: var(--font-text);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: var(--font-head);
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+
+h1,
+h2,
+h3 {
+  font-size: 2rem;
+  font-weight: 300;
+}
+
+h4,
+h5,
+h6 {
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+p {
+  text-indent: 2ch;
+  hyphens: auto;
+  text-align: justify;
+}
+
+/* NAVIGATION  */
+
+.buttbar {
+  width: 100%;
+  background-color: tomato;
+  display: grid;
+  grid-auto-flow: column;
+  place-content: center;
+  place-items: center;
+  padding: 1rem;
+  gap: 1rem;
+
+  position: fixed;
+  bottom: 0;
+  left: 0;
+
+  text-align: center;
+}
+
+.menu-left,
+.menu-right {
+  display: grid;
+  place-content: center;
+}
+
+ul {
+  display: flex;
+  gap: 0.5rem;
+  place-content: center;
+  place-items: center;
+  list-style: none;
+  list-style-type: none;
+  margin-block-start: 0;
+  margin-block-end: 0;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  padding-inline-start: 0;
+}
+
+li {
+  display: grid;
+  padding: 0.5rem;
+  border: 1px solid white;
+}
+
+/* PAGES  */
+
+.home-page {
+  display: grid;
+  gap: 2rem;
+  padding: 2rem;
+}
+
+/* PARTS */
+.tales,
+.one-tale,
+.write-tale-form {
+  max-width: 20cm;
+  min-width: 20cm;
+  width: 100%;
+  margin: 0 0 10rem 0;
+  padding: 2rem;
+}
+
+/* INPUT - TALE WRITE  */
+.write-tale {
+  display: grid;
+  padding: 1rem;
+  gap: 1rem;
+}
+
+/* hide 'choose file' */
+#file-input {
+  display: none;
+}
+
+form {
+  display: grid;
+  align-content: start;
+  margin: 0;
+  padding: 0;
+  gap: 1rem;
+}
+
+form * {
+  background-color: rgba(var(--col-coal7));
+  border-style: none;
+  color: rgba(var(--col-cloud), 1);
+  border: none;
+}
+
+form *:focus-visible {
+  border: 0px;
+  outline: 0;
+  border-bottom: var(--line);
+}
+
+.settings-profile-pic {
+  overflow: hidden;
+  width: 2cm;
+  height: 2cm;
+  border: 0.2rem solid rgba(var(--col-cloud), 0.77);
+  border-radius: 50%;
+  box-shadow: inset 0 0 1rem black;
+}
+.p-pic {
+  position: relative;
+  object-fit: cover;
+  width: inherit;
+  height: inherit;
+  z-index: -1;
+}
